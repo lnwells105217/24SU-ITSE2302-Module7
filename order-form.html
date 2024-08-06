@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <img src="Images/velvet-tee-logo.png" alt="velvet tee company logo" width="500" height="439">
+        <img src="Images/velvet-tee-logo.png" alt="velvet tee company logo" width="200" height="153.6">
         <nav>
             <ul>
                 <li>
@@ -19,119 +19,127 @@
                 <li>
                     <a href="#">Order Custom Prints</a></li>
                 <li>
-                    <a href="#">Login</a></li>
+                    <a href="#" class="login">Login</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h1>Place Custom Order</h1>
-        <picture>
-            <source srcset="Images/evolve-design-350w.png 350w,
-                            Images/evolve-design-500w.png 500w,
-                            Images/evolve-design-1000w.png 1000w">
-            <img src="Images/evolve-design-500w.png" 
-                 alt="man wearing a shirt with a butterfly printed on it" 
-                 width="500" height="750">
-        </picture>
-        <p>
-            We offer several printing methods to meet a variety of needs; whether you want custom 
-            shirts for a family reunion, to sell your own designs, or for company advertising, we 
-            have you covered. Don't have a design ready? We can take care of that too! 
-            Fill out the form below to request an order, and we'll get back to you in 1-2 
-            business days with an estimated production time and cost.
-        </p>
+        <h1>Custom Order Form</h1>
+        <section title="form instructions">
+            <picture>
+                <source srcset="Images/evolve-design-350w.png 350w,
+                                Images/evolve-design-500w.png 500w,
+                                Images/evolve-design-1000w.png 1000w">
+                <img src="Images/evolve-design-500w.png" 
+                    alt="man wearing a shirt with a butterfly printed on it" 
+                    width="350" height="350" class="intro-img">
+            </picture>
+            <p>
+                We offer several printing methods to meet a variety of needs; whether you want custom 
+                shirts for a family reunion, to sell your own designs, or for company advertising, we 
+                have you covered. Don't have a design ready? We can take care of that too! 
+                Fill out the form below to request an order, and we'll get back to you in 1-2 
+                business days with an estimated production time and cost.
+            </p>
+            <p>
+                If you're ordering design work, rest assured that you'll have full creative control 
+                throughout the process. One of our skilled designers will work with you from start to 
+                finish, to ensure you're 100% satisfied with the end product.
+            </p>
+        </section>
 
-        <!-- table to style & organize form elements -->
+        <!-- tables to style & organize form elements -->
         <form>
-        <table>
+            <table>
             <tr>
-                <td><label>
-                    First Name
-                    <input type="text" name="first-name"></label></td>
-                <td><label>
-                    Last name
-                    <input type="text" name="last-name"></label></td>
+                <td width="50%">
+                    <label for="first">First Name</label>
+                    <input type="text" name="first-name" id="first"></td>
+                <td width="50%">
+                    <label for="last">Last name</label>
+                    <input type="text" name="last-name" id="last"></td>
             </tr>
+            </table>
 
+            <table>
             <tr>
-                <td><label>
-                    Email Address
-                    <input type="email" name="email"></label></td>
-            </tr>
-
-            <tr>
-                <td>
+                <td width="100%">
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email" id="email">
                     <input id="newsletter" type="checkbox" value="yes" name="newsletter-sign-up">
                     <label for="newsletter">Sign up for our newsletter for exclusive offers!</label></td>
             </tr>
+            </table>
 
-            <tr>
-                <td>
-                    <fieldset>
-                        <legend>Services Needed</legend>
-                        <input type="checkbox" id="print" name="print-service" value="2.00">
-                        <label for="print">Shirt Prints</label>
-                        <input type="checkbox" id="design"  name="design-service" value="50.00">
-                        <label for="design">Design Creation</label>
-                    </fieldset></td>
-            </tr>
-
-            <tr>
-                <td>
-                    <fieldset>
-                        <legend>Printing Method</legend>
-                        <input id="direct" type="radio" name="print-method" value="direct-to-garmet">
-                        <label for="direct">Direct to Garmet</label>
-
-                        <input id="film" type="radio" name="print-method" value="direct-to-film">
-                        <label for="film">Direct to Film</label>
-
-                        <input id="screen" type="radio" name="print-method" value="screen-printing">
-                        <label for="screen">Screen Printing</label>
-
-                        <input id="heat" type="radio" name="print-method" value="heat-transfer-vinyl">
-                        <label for="heat">Heat Transfer Vinyl</label>
-                    </fieldset>
-
-                    <label for="qty">Quantity</label>
-                    <select id="qty" name="quantity">
-                        <!-- options will be created with JavaScript in a loop -->
-                    </select></td>
-                <td>
-                    <div>
+            <table>
+                <tr>
+                    <td width="35%">
+                        <fieldset>
+                            <legend>Services Needed</legend>
+                            <div class="block">
+                                <input type="checkbox" id="print" name="print-service" value="2.00">
+                                <label for="print">Shirt Prints</label>
+                            </div>
+                            <div class="block">
+                                <input type="checkbox" id="design"  name="design-service" value="50.00">
+                                <label for="design">Design Creation</label>
+                            </div>
+                        </fieldset></td>
+                    <td width="65%">
+                        <label for="req">Design Requirements</label>
+                        <textarea id="req" name="design-requirements"></textarea></td>
+                </tr>
+                <tr>
+                    <td>
+                        <fieldset>
+                            <legend>Printing Method</legend>
+                            <div class="block">
+                                <input id="direct" type="radio" name="print-method" value="direct-to-garmet">
+                                <label for="direct">Direct to Garmet</label>
+                            </div>
+                            <div class="block">
+                                <input id="film" type="radio" name="print-method" value="direct-to-film">
+                                <label for="film">Direct to Film</label>
+                            </div>
+                            <div class="block">
+                                <input id="screen" type="radio" name="print-method" value="screen-printing">
+                                <label for="screen">Screen Printing</label>
+                            </div>
+                            <div class="block">
+                                <input id="heat" type="radio" name="print-method" value="heat-transfer-vinyl">
+                                <label for="heat">Heat Transfer Vinyl</label>
+                            </div>
+                        </fieldset>
+                        
+                        <div class="block quantity">
+                            <label for="qty">Quantity</label>
+                            <select id="qty" name="quantity">
+                                <!-- options will be created with JavaScript in a loop -->
+                            </select>
+                        <div></td>
+                    <td>
                         <!-- text will be added to these elements 
                         -- based on the value in the above fieldset -->
-                        <h2 id="print-method-h2"></h2>
-                        <p id="print-method-info"></p>
-                    </div></td>
-            </tr>
+                        <h2 id="print-method-h2">Print Method Info</h2>
+                        <div class="method-info-div">
+                            <p id="print-method-info"></p>
+                        </div></td>
+                </tr>
+            </table>
 
-            <tr>
-                <td>
-                    <label for="req">Design Requirements</label>
-                    <textarea id="req" name="design-requirements"></textarea></td>
-            </tr>
-
-            <tr>
-                <td>
-                    <p>Estimated Cost: </p></td>
-            </tr>
-
-            <tr>
-                <td>
-                    <button type="reset" value="Reset"></button></td>
-                <td>
-                    <button type="submit" value="Submit"></button></td>
-            </tr>
-        </table>
+            <p class="cost">Estimated Cost: </p>
+            <div class="buttons">
+                <button type="reset" value="Reset">Reset</button>
+                <button type="submit" value="Submit">Submit</button>
+            </div>
         </form>
 
         <picture>
-            <source srcset="Images/flower-design-600w 400w,
-                            Images/flower-design-975w 650w,
-                            Images/flower-design-1500w 1500w">
-            <img src="Images/flower-design-650w" alt="woman wearing a shirt with flowers printed on it" width="600" height="400">
+            <source srcset="Images/flower-design-600w.png 600w,
+                            Images/flower-design-975w.png 975w,
+                            Images/flower-design-1500w.png 1500w">
+            <img src="Images/flower-design-600w.png" alt="woman wearing a shirt with flowers printed on it" width="600" height="400" class="center">
         </picture>
     </main>
 
