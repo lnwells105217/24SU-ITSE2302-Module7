@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Shirt Order Form</title>
     <link rel="stylesheet" href="CSS/formStyles.css">
-    <script src="orderForm.js" defer></script>
+    <script src="JavaScript/orderForm.js" defer></script>
 </head>
 <body>
     <header>
@@ -55,10 +55,10 @@
             <tr>
                 <td width="50%">
                     <label for="first">First Name</label>
-                    <input type="text" name="first-name" id="first"></td>
+                    <input type="text" name="first-name" id="first" aria-required="true"></td>
                 <td width="50%">
-                    <label for="last">Last name</label>
-                    <input type="text" name="last-name" id="last"></td>
+                    <label for="last">Last Name</label>
+                    <input type="text" name="last-name" id="last" aria-required="true"></td>
             </tr>
             </table>
 
@@ -66,7 +66,7 @@
             <tr>
                 <td width="100%">
                     <label for="email">Email Address</label>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="email" id="email" aria-required="true">
                     <input id="newsletter" type="checkbox" value="yes" name="newsletter-sign-up">
                     <label for="newsletter">Sign up for our newsletter for exclusive offers!</label></td>
             </tr>
@@ -75,9 +75,9 @@
             <table>
                 <tr>
                     <td width="35%">
-                        <fieldset>
+                        <fieldset class="services" aria-required="true">
                             <legend>Services Needed</legend>
-                            <div class="block">
+                            <div class="block" aria-required="true">
                                 <input type="checkbox" id="print" name="print-service" value="4.00">
                                 <label for="print">Shirt Prints</label>
                             </div>
@@ -92,7 +92,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <fieldset>
+                        <fieldset id="method">
                             <legend>Printing Method</legend>
                             <div class="block">
                                 <input id="direct" type="radio" name="print-method" value="1.00">
@@ -108,7 +108,7 @@
                             </div>
                         </fieldset>
                         
-                        <div class="block quantity">
+                        <div class="quantity">
                             <label for="qty">Quantity</label>
                             <select id="qty" name="quantity">
                                 <!-- options will be created with JavaScript in a loop -->
@@ -117,18 +117,23 @@
                     <td>
                         <!-- text will be added to these elements 
                         -- based on the value in the above fieldset -->
-                        <h2 id="print-method-h2">Print Method Info</h2>
+                        <h2 id="print-method-h2">More Information</h2>
                         <p id="print-method-info"></p></td>
                 </tr>
             </table>
 
-            <p class="cost">Estimated Cost: </p>
+            <p class="cost"></p>
             <div class="buttons">
-                <button type="reset" value="Reset">Reset</button>
-                <button type="submit" value="Submit">Submit</button>
+                <button type="reset" value="Reset">Reset Form</button>
+                <button type="button" value="Estimate">Estimate Total</button>
+                <div class="hover">
+                    <button type="submit" value="Submit">Place Order</button>
+                </div>
+                <div class="popup">All fields are required.</div>
             </div>
         </form>
 
+        <p id="message">We look forward to working with you!</p>
         <picture>
             <source srcset="Images/flower-design-600w.png 600w,
                             Images/flower-design-975w.png 975w,

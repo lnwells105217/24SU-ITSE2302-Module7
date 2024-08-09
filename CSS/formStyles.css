@@ -12,7 +12,7 @@
 */
 :root {
     --pink: #F9E6DD;
-    --coral: #EA8689;
+    --coral: #ea8689;
     --violet: #6D597A;
     --indigo: #2E4561;
     --black: #0A101F;
@@ -125,13 +125,19 @@ footer {
     box-shadow: 0 -2px 3px var(--coral);
 }
 
+#message {
+    font: 400 36px/1.5 Gabriela, serif;
+    text-align: center;
+    color: var(--violet);
+    margin-top: 20px;
+}
 /***********************************************/
 /********** FORM INSTRUCTIONS SECTION **********/
 section {
     /* title underline */
     border-top: var(--coral) solid 2px;
     padding-top: 15px;
-    width: 60%;
+    width: 90%;
     margin: 0 auto;
     margin-bottom: 50px;
 }
@@ -149,7 +155,7 @@ p {
 form {
     clear: both;
     background-color: white;
-    width: 60%;
+    width: 90%;
     margin: 0 auto;
     box-sizing: border-box;
     padding: 100px 200px;
@@ -189,6 +195,17 @@ fieldset {
     margin: 0;
     padding: 0;
 }
+select {
+    /* causes the options to appear below rather than above the element */
+    position: absolute;
+    top: 5px;
+    left: 90px;
+    font-size: 18px;
+    min-height: 30px;
+    min-width: 50px;
+    /* prevent's reset button from appearing on top*/
+    z-index: 5;
+}
 
 /********** STYLES LABELS **********/
 /* forces labels for text input onto a new line */
@@ -212,6 +229,7 @@ label, legend {
 /* estimated cost paragraph font */
 .cost {
     font: 400 30px/1.5 Gabriela, serif;
+    text-align: center;
 }
 
 /********** SIZES METHOD INFO SECTION & TEXTAREA **********/
@@ -231,19 +249,21 @@ textarea {
     margin-bottom: 4px;
 }
 #print-method-info {
-    font-size: 16px;
+    font-size: 18px;
     border: 2px solid var(--coral);
     width: 100%;
     box-sizing: border-box;
     padding: 5px;
-    min-height: 120px;
+    min-height: 150px;
 }
 
 /********** ALIGN ELEMENTS **********/
 /* aligns quantity select box */
 .quantity {
-    margin-top: 100px;
+    margin-top: 60px;
     margin-left: 5px;
+    /* used to positon the select element relative to this div */
+    position: relative;
 }
 /* forces checkboxes/radio inputs onto their own line */
 .block {
@@ -268,5 +288,18 @@ button {
 }
 .buttons {
     text-align: center;
+    position: relative;
 }
-
+.hover {
+    display: inline;
+}
+.popup {
+    position: absolute;
+    /* centers the popup in the div*/
+    left: 50%;
+    transform: translateX(-50%);
+    top: 65px;
+    height: 75px;
+    font: 400 20px/1.5 Gabriela, serif;
+    color: var(--violet);
+}
